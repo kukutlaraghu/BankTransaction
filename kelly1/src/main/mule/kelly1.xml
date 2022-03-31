@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config6" doc:name="HTTP Listener config" doc:id="ebf2743d-9bdd-47f3-91d7-ad39e2829ce6" >
+		<http:listener-connection host="localhost" port="8083" />
+	</http:listener-config>
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="a83cf455-afb9-4e9c-9bd7-dc153f2d6703" >
+		<http:listener-connection host="localhost" port="8081" />
+	</http:listener-config>
+	<http:listener-config name="HTTP_Listener_config1kelly" doc:name="HTTP Listener config" doc:id="10f79619-9dd7-453e-b06c-d6944b79ec64" >
+		<http:listener-connection host="localhost" port="8083" />
+	</http:listener-config>
+	<http:listener-config name="HTTP_Listener_config1raghu" doc:name="HTTP Listener config" doc:id="d7e7388a-3c72-4251-a6d8-07e1aa945c01" >
+		<http:listener-connection host="localhost" port="8084" />
+	</http:listener-config>
+	<flow name="kelly1Flow" doc:id="67eaf4a3-adb9-455b-92b0-c8ec0e7459fd" >
+		<http:listener doc:name="kelly" doc:id="699f91cd-fa91-467f-8eee-23e3feb1fd1d" path="/kelly" config-ref="HTTP_Listener_config1kelly"/>
+		<set-payload value="this is kelly first mule program" doc:name="Set Payload" doc:id="52c4e60d-7023-4c87-8f90-1dae572c2a8d" />
+		<logger level="INFO" doc:name="Logger" doc:id="676e405e-4b2d-418d-bce0-8f13e75f0280" message="welcome to kelly"/>
+	</flow>
+	<flow name="kelly1Flow1" doc:id="17a56580-cf39-4213-a2d4-bcb4c005d7ce" >
+		<http:listener doc:name="kelly2" doc:id="73c26e95-c4e6-43f1-ac71-db0b925934f4" path="/kelly9" config-ref="HTTP_Listener_config1raghu"/>
+		<set-payload value="this is seocnd mule program" doc:name="Set Payload" doc:id="d24c8b9c-6630-471c-a723-6abe258da32e" />
+	</flow>
+</mule>
